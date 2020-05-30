@@ -15,6 +15,7 @@ class App extends React.Component {
   	this.state={
 		cardCasesData:{},
 		countriesCases:[],
+    textEntered:'',
 		country:"World"
   	}
   }
@@ -30,12 +31,13 @@ class App extends React.Component {
   }
 
  onSearch = (event)=>{
-  	this.setState({country:event.target.value});
+  	this.setState({textEntered:event.target.value});
   }
 
  onSearchPressed = () =>{
- 	console.log(this.state.country);
-  let selectedCountry = this.state.countriesCases.find(countrySelected=>countrySelected.Country===this.state.country);
+  this.setState({country:this.state.textEntered})
+  let selectedCountry = this.state.countriesCases.find(countrySelected=>countrySelected.Slug.toLowerCase()===this.state.textEntered.toLowerCase());
+  console.log(selectedCountry);
   if(selectedCountry===undefined){
     console.log("Wrong country name!!!");
   }
