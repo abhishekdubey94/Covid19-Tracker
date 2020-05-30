@@ -4,7 +4,7 @@ import './ResultCard.css'
 
 class ResultCard extends React.Component{
 	render(){
-		const {TotalConfirmed,TotalRecovered,TotalDeaths,NewConfirmed,NewRecovered,NewDeaths} = this.props.worldCases;
+		const {TotalConfirmed,TotalRecovered,TotalDeaths,NewConfirmed,NewRecovered,NewDeaths} = this.props.cardCasesData;
 		return(
 		<div className='ac resultCard'>
 			<Card totalNumber={TotalConfirmed} newAdded={NewConfirmed} color="bg-blue" title='Confirmed'/>

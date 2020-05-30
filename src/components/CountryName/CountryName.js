@@ -4,7 +4,7 @@ class CountryName extends React.Component {
 	
 	render(){
 	return(<div style={{display:'flex', justifyContent:'center'}} className='mt4'>
-		<h1>WORLD</h1>
+		<h1>{this.props.countrySelected}</h1>
 	</div>);
 	}
 }
